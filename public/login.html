@@ -169,9 +169,9 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.CNPJ_USUARIO = json.cnpj;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.CNPJ = json.cnpj;
+                    sessionStorage.NOME_CONDOMINIO = json.nome_condominio;
+                    sessionStorage.ID_CONDOMINIO = json.idCondominio;
 
                     setTimeout(function () {
                         window.location = "./dashboard/Dash_Geral.html";

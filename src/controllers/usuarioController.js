@@ -15,8 +15,8 @@ function autenticar(req, res) {
                 console.log(resultadoAutenticar);
 
                 res.json({
-                    idUsuario: resultadoAutenticar[0].idUsuario,
-                    nome: resultadoAutenticar[0].nome,
+                    idCondominio: resultadoAutenticar[0].idCondominio,
+                    nome_condominio: resultadoAutenticar[0].nome_condominio,
                     cnpj: resultadoAutenticar[0].cnpj
                 });
             } else if (resultadoAutenticar.length == 0) {

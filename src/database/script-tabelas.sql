@@ -69,8 +69,9 @@ CONSTRAINT fkPredioSensor FOREIGN KEY (fkPredio) references predio(idPredio)
 
 -- Tabela Alerta
 CREATE TABLE alerta(
-idAlerta INT AUTO_INCREMENT,
+idAlerta INT primary key AUTO_INCREMENT,
 statusAlerta VARCHAR(12),
+acao_rapida varchar(45)
 	CONSTRAINT ckStatus
 		CHECK (statusAlerta IN ('Seguro', 'Atenção', 'Alerta', 'Emergência'))
 );

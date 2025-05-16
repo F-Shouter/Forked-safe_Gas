@@ -8,11 +8,7 @@ function autenticar(req, res) {
     usuarioModel.autenticar(cnpj, senha)
     .then(
         function (resultadoAutenticar) {
-            console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-            console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
-
             if (resultadoAutenticar.length == 1) {
-                console.log(resultadoAutenticar);
 
                 res.json({
                     idCondominio: resultadoAutenticar[0].idCondominio,
@@ -28,7 +24,6 @@ function autenticar(req, res) {
         }
     ).catch(
         function (erro) {
-            console.log(erro);
             console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
             res.status(500).json(erro.sqlMessage);
         }
@@ -79,6 +74,7 @@ function cadastrar(req, res) {
             );
     }
 }
+
 
 module.exports = {
     autenticar,

@@ -10,12 +10,12 @@
   <title>Dashboard Específica</title>
 </head>
 
-<body>
+<body onload="retornar()">
 
   <div class="main"> <!-- Contêiner principal -->
     <div class="navbar"> <!-- Barra lateral de Menu -->
       <div class="welcome_navbar">
-        <h5>Olá, <span> ${nome} </span>!</h5>
+        <h5>Olá, <span id="span_nome_condominio"></span>!</h5>
         <h5>Bem-vindo de volta.</h5>
       </div>
 
@@ -150,6 +150,7 @@
 
 </html>
 <script>
+
   const ctx = document.getElementById('canvas_grafico').getContext('2d');
 
   const gradient = ctx.createLinearGradient(0, 0, 0, 500);
@@ -229,5 +230,10 @@
       }
     }]
   });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const nome = sessionStorage.NOME_CONDOMINIO || "Condomínio";
+    document.getElementById("span_nome_condominio").textContent = nome;
+});
 
 </script>

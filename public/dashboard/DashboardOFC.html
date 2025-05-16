@@ -90,7 +90,7 @@
     <div class="main">
         <div class="navbar">
             <div class="welcome_navbar">
-                <h5>Olá, <span> ${nome} </span>!</h5>
+                <h5>Olá, <span id="span_nome_condominio"></span>!</h5>
                 <h5>Bem-vindo de volta.</h5>
             </div>
 
@@ -230,7 +230,7 @@
                         <div class="informacao_notificacao">
                             <div class="informacao_emergencia">Torre B, Apto 703</div>
                             <div class="nivel_gas">Nível emergencial de gás detectado</div>
-                            <button class="btn_verificar">Verificar</button>
+                            <button class="btn_verificar"><a href="dash_especifica.html">Verificar</a></button>
                         </div>
                         <div class="horario_notificacao">
                             Agora
@@ -488,4 +488,9 @@
             }
         });
     });
+
+
+    const nome = sessionStorage.NOME_CONDOMINIO ;
+    document.getElementById("span_nome_condominio").textContent = nome;
+
 </script>

@@ -1,11 +1,10 @@
-var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+var condominioModel = require("../models/condominioModel");
 
 function autenticar(req, res) {
     var cnpj = req.body.cnpjServer;
     var senha = req.body.senhaServer;
 
-    usuarioModel.autenticar(cnpj, senha)
+    condominioModel.autenticar(cnpj, senha)
     .then(
         function (resultadoAutenticar) {
             if (resultadoAutenticar.length == 1) {
@@ -57,7 +56,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, cep, logradouro, numLog, cnpj, senha)
+        condominioModel.cadastrar(nome, cep, logradouro, numLog, cnpj, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);

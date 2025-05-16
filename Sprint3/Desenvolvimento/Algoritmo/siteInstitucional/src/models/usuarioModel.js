@@ -16,7 +16,7 @@ function cadastrar(nome, cep, logradouro, numero_log, cnpj, senha, fkEmpresa) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        INSERT INTO condominio (nome, cep, logradouro, numero_log, cnpj, senha) VALUES ('${nome}', '${cep}', '${logradouro}', '${numero_log}', '${cnpj}',  '${senha}');
+        INSERT INTO condominio (nome_condominio, cep, logradouro, numero_logradouro, cnpj, senha) VALUES ('${nome}', '${cep}', '${logradouro}', '${numlog}', '${cnpj}', '${senha}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

@@ -1,11 +1,11 @@
 var database = require("../database/config")
 
-function retornar_dados_kpi(numero_apartamento) {
+function retornar_dados_tituloGrafico(numero_apartamento) {
     var instrucaoSql = `
-    SELECT statusAlerta, acao, risco 
-        FROM alerta
+    SELECT predio.bloco_predio
+        FROM predio
         JOIN apartamento
-        ON alerta.fkApartamentoMedicao = apartamento.idApartamento
+        ON predio.idPredio = apartamento.fkPredioApto 
         WHERE apartamento.numero_apartamento = '${numero_apartamento}';`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -14,5 +14,6 @@ function retornar_dados_kpi(numero_apartamento) {
 
 
 module.exports = {
-    retornar_dados_kpi,
+    retornar_dados_tituloGrafico,
 };
+

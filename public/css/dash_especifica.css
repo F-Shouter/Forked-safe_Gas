@@ -229,3 +229,7 @@
     font-size: 17px;
     color: #ffffff;
 }
+.div_opcao_sensor .btn_sensor:hover{
+    transform: scale(1.05); /* aumenta o botão */
+    background-color: rgb(50, 51, 56); /* cor ao passar o mouse */
+}

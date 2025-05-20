@@ -18,6 +18,7 @@ var app = express();
 var condominioRouter = require("./src/routes/condominio");
 var alertaRouter = require("./src/routes/alerta");
 var predioRouter = require("./src/routes/predio");
+var sensorRouter = require("./src/routes/sensor");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,6 +29,7 @@ app.use(cors());
 app.use("/condominio", condominioRouter);
 app.use("/alerta", alertaRouter);
 app.use("/predio", predioRouter);
+app.use("/sensor", sensorRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

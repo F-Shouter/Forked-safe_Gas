@@ -198,7 +198,7 @@
   if (!dataHoraStr) return "";
 
   const meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
-  const dataHora = new Date(dataHoraStr.replace(" ", "T")); // Garante compatibilidade
+  const dataHora = new Date(dataHoraStr.replace(" ", "T")); 
 
   const agora = new Date();
   const hoje = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate());
